@@ -3,7 +3,6 @@ package com.highschool.business.library.usecases;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
-import com.highschool.domain.library.BookLoan;
 import com.highschool.domain.library.commands.UpdateBookCategory;
 import com.highschool.domain.library.entities.Librarian;
 import com.highschool.domain.library.entities.Reader;
@@ -21,7 +20,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 class UpdateBookCategoryUseCaseTest {
@@ -33,7 +32,7 @@ class UpdateBookCategoryUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    public void updateBookCategoryTest(){
+    void updateBookCategoryTest(){
         //ARRANGE
         BookLoanID loanID = BookLoanID.of("XXXX");
         BookID bookID = BookID.of("YYYY");
@@ -45,8 +44,8 @@ class UpdateBookCategoryUseCaseTest {
                         new Librarian(LibrarianID.of("222"), new LibrarianFullName("CCCC", "DDDD")),
                         new LoanStatus(LoanStatusEnum.ONCOURSE),
                         new LoanLimitDate(LocalDate.now().plusMonths(1))),
-                new BookAdded(bookID.of("YYYY"), new BookName("The Prince"), new BookDescription("Fun"), new BookCategory("Adventure")),
-                new BookAdded(bookID.of("ZZZZ"), new BookName("The Princess"), new BookDescription("Boring"), new BookCategory("Thriller"))
+                new BookAdded(BookID.of("YYYY"), new BookName("The Prince"), new BookDescription("Fun"), new BookCategory("Adventure")),
+                new BookAdded(BookID.of("ZZZZ"), new BookName("The Princess"), new BookDescription("Boring"), new BookCategory("Thriller"))
         ));
         useCase.addRepository(repository);
 

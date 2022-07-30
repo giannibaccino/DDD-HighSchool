@@ -22,7 +22,7 @@ class CreateLoanUseCaseTest {
     public void setup() { useCase = new CreateLoanUseCase(); }
 
     @Test
-    public void createTestLoan() {
+    void createTestLoan() {
         //ARRANGE
         BookLoanID bookLoanID = BookLoanID.of("XXXX");
         Reader reader = new Reader(ReaderID.of("111"), new ReaderFullName("AAAA", "BBBB"));

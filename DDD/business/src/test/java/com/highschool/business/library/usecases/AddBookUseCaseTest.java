@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
@@ -32,7 +33,7 @@ class AddBookUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    public void addBookTest() {
+    void addBookTest() {
         //ARRANGE
         BookLoanID bookLoanID = BookLoanID.of("XXXX");
         BookName bookName = new BookName("AAAA");
@@ -56,6 +57,7 @@ class AddBookUseCaseTest {
         assertEquals("AAAA", event.getBookName().value());
         assertEquals("BBBB", event.getBookDescription().value());
         assertEquals("CCCC", event.getBookCategory().value());
+        Mockito.verify(repository).getEventsBy("XXXX");
     }
 
     private List<DomainEvent> history() {

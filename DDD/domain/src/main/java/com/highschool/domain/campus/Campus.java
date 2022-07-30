@@ -43,7 +43,7 @@ public class Campus extends AggregateEvent<CampusURL> {
         appendChange(new UserAdded(userID, username, userPassword, email)).apply();
     }
 
-    public void updateUserUsername(UserID userID, Username username) {
+    public void updateUsername(UserID userID, Username username) {
         appendChange(new UsernameUpdated(userID, username)).apply();
     }
 
@@ -52,7 +52,8 @@ public class Campus extends AggregateEvent<CampusURL> {
     }
 
     public void addCourse(CourseName courseName, CoursePassword coursePassword) {
-        appendChange(new CourseAdded(courseName, coursePassword)).apply();
+        CourseID courseID = new CourseID();
+        appendChange(new CourseAdded(courseID, courseName, coursePassword)).apply();
     }
 
     public void updateCourseName(CourseID courseID, CourseName courseName) {

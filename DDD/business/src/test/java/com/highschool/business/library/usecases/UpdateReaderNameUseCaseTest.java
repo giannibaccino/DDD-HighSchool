@@ -3,11 +3,9 @@ package com.highschool.business.library.usecases;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
-import com.highschool.domain.library.commands.UpdateLibrarianName;
 import com.highschool.domain.library.commands.UpdateReaderName;
 import com.highschool.domain.library.entities.Librarian;
 import com.highschool.domain.library.entities.Reader;
-import com.highschool.domain.library.events.LibrarianNameUpdated;
 import com.highschool.domain.library.events.LoanCreated;
 import com.highschool.domain.library.events.ReaderNameUpdated;
 import com.highschool.domain.library.values.*;
@@ -21,7 +19,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 class UpdateReaderNameUseCaseTest {
@@ -33,7 +31,7 @@ class UpdateReaderNameUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    public void updateReaderNameTest() {
+    void updateReaderNameTest() {
         //ARRANGE
         BookLoanID loanID = BookLoanID.of("XXXX");
         ReaderID readerID = ReaderID.of("YYYY");

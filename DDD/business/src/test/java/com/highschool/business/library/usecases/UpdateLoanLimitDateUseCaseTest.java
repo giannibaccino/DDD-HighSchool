@@ -3,12 +3,11 @@ package com.highschool.business.library.usecases;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
-import com.highschool.domain.library.commands.UpdateBookCategory;
 import com.highschool.domain.library.commands.UpdateLoanLimitDate;
-import com.highschool.domain.library.commands.UpdateLoanStatus;
 import com.highschool.domain.library.entities.Librarian;
 import com.highschool.domain.library.entities.Reader;
-import com.highschool.domain.library.events.*;
+import com.highschool.domain.library.events.LoanCreated;
+import com.highschool.domain.library.events.LoanLimitDateUpdated;
 import com.highschool.domain.library.values.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,7 +19,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 class UpdateLoanLimitDateUseCaseTest {
@@ -32,7 +31,7 @@ class UpdateLoanLimitDateUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    public void updateLoanLimitDateTest(){
+    void updateLoanLimitDateTest(){
         //ARRANGE
         BookLoanID loanID = BookLoanID.of("XXXX");
         LoanLimitDate limitDate = new LoanLimitDate(LocalDate.now().plusMonths(2));

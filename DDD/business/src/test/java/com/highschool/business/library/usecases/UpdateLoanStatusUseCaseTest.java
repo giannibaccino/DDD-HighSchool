@@ -31,7 +31,7 @@ class UpdateLoanStatusUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    public void updateLoanStatusTest() {
+    void updateLoanStatusTest() {
         //ARRANGE
         BookLoanID loanID = BookLoanID.of("XXXX");
         LoanStatus loanStatus = new LoanStatus(LoanStatusEnum.ENDED);
