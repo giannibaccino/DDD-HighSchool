@@ -11,7 +11,7 @@ public class CampusChange extends EventChange {
         apply((CampusCreated event) -> {
             campus.userSet = new HashSet<>();
             campus.courseSet = new HashSet<>();
-            campus.campusStatus = getCampusStatus();
+            campus.campusStatus = event.getCampusStatus();
         });
     }
 }
