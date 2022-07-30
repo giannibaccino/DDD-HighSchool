@@ -8,7 +8,12 @@ public class BookName implements ValueObject<String> {
 
     private final String value;
 
-    public BookName(String value) { this.value = Objects.requireNonNull(value); }
+    public BookName(String value) {
+        this.value = Objects.requireNonNull(value);
+        if(this.value.isBlank()){
+            throw new IllegalArgumentException("El nombre no puede estar en blanco");
+        }
+    }
 
     @Override
     public String value() { return this.value; }

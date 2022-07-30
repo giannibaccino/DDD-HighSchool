@@ -8,7 +8,12 @@ public class BookDescription implements ValueObject<String> {
 
     private final String value;
 
-    public BookDescription(String value) { this.value = Objects.requireNonNull(value); }
+    public BookDescription(String value) {
+        this.value = Objects.requireNonNull(value);
+        if(this.value.isBlank()){
+            throw new IllegalArgumentException("La descripcion no puede estar en blanco");
+        }
+    }
 
     @Override
     public String value() { return this.value; }

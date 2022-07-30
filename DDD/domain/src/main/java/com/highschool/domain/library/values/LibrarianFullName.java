@@ -11,7 +11,13 @@ public class LibrarianFullName implements ValueObject<String> {
 
     public LibrarianFullName(String firstName, String lastName) {
         this.firstName = Objects.requireNonNull(firstName);
+        if(this.firstName.isBlank()){
+            throw new IllegalArgumentException("El nombre no puede estar en blanco");
+        }
         this.lastName = Objects.requireNonNull(lastName);
+        if(this.lastName.isBlank()){
+            throw new IllegalArgumentException("El apellido no puede estar en blanco");
+        }
     }
 
     @Override
