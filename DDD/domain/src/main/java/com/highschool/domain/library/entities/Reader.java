@@ -4,6 +4,8 @@ import co.com.sofka.domain.generic.Entity;
 import com.highschool.domain.library.values.ReaderFullName;
 import com.highschool.domain.library.values.ReaderID;
 
+import java.util.Objects;
+
 public class Reader extends Entity<ReaderID> {
 
     private ReaderFullName readerName;
@@ -11,6 +13,11 @@ public class Reader extends Entity<ReaderID> {
     public Reader(ReaderID readerID, ReaderFullName readerName) {
         super(readerID);
         this.readerName = readerName;
+    }
+
+    //UPDATES
+    public void updateName(ReaderFullName readerName) {
+        this.readerName = Objects.requireNonNull(readerName);
     }
 
     //GETTERS

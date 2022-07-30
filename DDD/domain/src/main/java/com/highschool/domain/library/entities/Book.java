@@ -10,14 +10,17 @@ public class Book extends Entity<BookID> {
     private BookName bookName;
     private BookDescription bookDescription;
     private BookCategory bookCategory;
-    private BookStatus bookStatus;
 
-    public Book(BookID bookID, BookName bookName, BookDescription bookDescription, BookCategory bookCategory, BookStatus bookStatus) {
-        super(bookID);
+    public Book(BookID entityId, BookName bookName, BookDescription bookDescription, BookCategory bookCategory) {
+        super(entityId);
         this.bookName = bookName;
         this.bookDescription = bookDescription;
         this.bookCategory = bookCategory;
-        this.bookStatus = bookStatus;
+    }
+
+    //UPDATES
+    public void updateCategory(BookCategory bookCategory) {
+        this.bookCategory = Objects.requireNonNull(bookCategory);
     }
 
     //GETTERS
@@ -31,17 +34,5 @@ public class Book extends Entity<BookID> {
 
     public BookCategory getBookCategory() {
         return bookCategory;
-    }
-
-    public BookStatus getBookStatus() {
-        return bookStatus;
-    }
-
-    //UPDATES
-    public void updateBookStatus() {
-        if(bookStatus.value() == BookStatusEnum.AVAILABLE)
-            bookStatus = new BookStatus(BookStatusEnum.UNAVAILABLE);
-        else
-            bookStatus = new BookStatus(BookStatusEnum.AVAILABLE);
     }
 }

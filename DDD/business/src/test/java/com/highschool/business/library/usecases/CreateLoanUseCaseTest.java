@@ -27,48 +27,32 @@ class CreateLoanUseCaseTest {
     }
 
     @Test
-    public void createNewLoan() {
-        BookID bookID = BookID.of("111");
-        BookName bookName = new BookName("The Prince");
-        BookDescription bookDescription = new BookDescription("Fun");
-        BookCategory bookCategory = new BookCategory("Children");
-        BookStatus bookStatus = new BookStatus(BookStatusEnum.UNAVAILABLE);
-        Book book = new Book(bookID, bookName, bookDescription, bookCategory, bookStatus);
-
-        ReaderID readerID = ReaderID.of("222");
-        ReaderFullName readerName = new ReaderFullName("Peter", "Parker");
-        Reader reader = new Reader(readerID, readerName);
-
-        LibrarianID librarianID = LibrarianID.of("333");
-        LibrarianFullName librarianName = new LibrarianFullName("Jess", "Banin");
-        Librarian librarian = new Librarian(librarianID, librarianName);
-
+    public void createTestLoan() {
+        //ARRANGE
         LoanLimitDate limitDate = new LoanLimitDate(LocalDate.now().plusMonths(1));
 
         BookLoanID loanID = BookLoanID.of("xxx");
-        CreateLoan command = new CreateLoan(loanID, book, reader, librarian, limitDate);
+        CreateLoan command = new CreateLoan(loanID, limitDate);
 
-        List<DomainEvent> domainEvents = UseCaseHandler
+        //ACT
+        var events = UseCaseHandler
                 .getInstance()
                 .syncExecutor(useCase, new RequestCommand<>(command))
                 .orElseThrow()
                 .getDomainEvents();
 
-        LoanCreated loanCreated = (LoanCreated) domainEvents.get(0);
-        assertEquals("111", loanCreated.getBook().identity().value());
-        assertEquals("The Prince", loanCreated.getBook().getBookName().value());
-        assertEquals("Fun", loanCreated.getBook().getBookDescription().value());
-        assertEquals("Children", loanCreated.getBook().getBookCategory().value());
-        assertEquals(BookStatusEnum.UNAVAILABLE, loanCreated.getBook().getBookStatus().value());
-
-        assertEquals("222", loanCreated.getReader().identity().value());
-        assertEquals("Peter Parker", loanCreated.getReader().getReaderName().value());
-
-        assertEquals("333", loanCreated.getLibrarian().identity().value());
-        assertEquals("Jess Banin", loanCreated.getLibrarian().getLibrarianName().value());
-
+        //ASSERTS
+        var loanCreated = (LoanCreated) events.get(0);
         assertEquals(LocalDate.now().plusMonths(1), loanCreated.getLimitDate().value());
-
         assertEquals("xxx", loanCreated.aggregateRootId());
+    }
+
+    private List<DomainEvent> history() {
+        LoanLimitDate limitDate = new LoanLimitDate(LocalDate.now().plusMonths(1));
+
+        var event = new LoanCreated(limitDate);
+
+        event.setAggregateRootId("AAAA");
+        return List.of(event);
     }
 }

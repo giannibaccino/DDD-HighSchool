@@ -1,20 +1,22 @@
-package com.highschool.domain.library.commands;
+package com.highschool.domain.library.events;
 
-import co.com.sofka.domain.generic.Command;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.highschool.domain.library.values.LibrarianFullName;
 import com.highschool.domain.library.values.LibrarianID;
 
-public class CreateLibrarian extends Command {
+public class LibrarianNameUpdated extends DomainEvent {
 
     private final LibrarianID librarianID;
     private final LibrarianFullName librarianName;
 
-    public CreateLibrarian(LibrarianID librarianID, LibrarianFullName librarianName) {
+    public LibrarianNameUpdated(LibrarianID librarianID, LibrarianFullName librarianName) {
+        super("com.highschool.domain.library.librariannameupdated");
         this.librarianID = librarianID;
         this.librarianName = librarianName;
     }
 
     //GETTERS
+
     public LibrarianID getLibrarianID() {
         return librarianID;
     }
