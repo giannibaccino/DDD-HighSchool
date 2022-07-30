@@ -4,14 +4,14 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class UserPassword implements ValueObject<String> {
+public class CourseName implements ValueObject<String> {
 
     private final String value;
 
-    public UserPassword(String value) {
+    public CourseName(String value) {
         this.value = Objects.requireNonNull(value);
         if(this.value.isBlank()){
-            throw new IllegalArgumentException("La contrasena no puede estar en blanco");
+            throw new IllegalArgumentException("El nombre no puede estar en blanco");
         }
     }
 

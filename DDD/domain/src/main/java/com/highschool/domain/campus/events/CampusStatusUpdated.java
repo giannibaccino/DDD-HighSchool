@@ -1,4 +1,4 @@
 package com.highschool.domain.campus.events;
 
-public class UserPasswordUpgraded {
+public class CampusStatusUpdated {
 }

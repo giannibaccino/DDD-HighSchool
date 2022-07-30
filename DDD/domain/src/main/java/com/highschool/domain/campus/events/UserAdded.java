@@ -1,4 +1,4 @@
 package com.highschool.domain.campus.events;
 
-public class ContentUploaded {
+public class UserAdded {
 }

@@ -68,10 +68,6 @@ public class BookLoan extends AggregateEvent<BookLoanID> {
         return this.books.stream().filter(book -> book.identity().equals(bookID)).findFirst();
     }
 
-    public Set<Book> getBooks() {
-        return books;
-    }
-
     public Reader getReader() {
         return reader;
     }

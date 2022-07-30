@@ -1,4 +1,4 @@
 package com.highschool.domain.campus.commands;
 
-public class UploadContent {
+public class UpdateCampusStatus {
 }
