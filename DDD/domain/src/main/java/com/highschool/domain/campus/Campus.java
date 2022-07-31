@@ -60,6 +60,10 @@ public class Campus extends AggregateEvent<CampusURL> {
         appendChange(new CourseAdded(courseID, courseName, coursePassword)).apply();
     }
 
+    public void courseAddedMessage(String message) {
+        appendChange(new CourseAddedMessage(message)).apply();
+    }
+
     public void updateCourseName(CourseID courseID, CourseName courseName) {
         appendChange(new CourseNameUpdated(courseID, courseName)).apply();
     }
