@@ -10,7 +10,10 @@
 
 - Aggregates: 3
 - Entities: 8
+- ValueObjects: 30
+    Enum: 3
 - Commands: 23
 - Events: 26
+    Triggered by event: 3
 - UseCases: 26
 - Tests: 26
