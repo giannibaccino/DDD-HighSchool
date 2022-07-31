@@ -2,12 +2,10 @@ package com.highschool.domain.classroom;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import com.highschool.domain.campus.events.CourseAdded;
 import com.highschool.domain.classroom.entities.Student;
 import com.highschool.domain.classroom.entities.Teacher;
 import com.highschool.domain.classroom.entities.Test;
-import com.highschool.domain.classroom.events.TeacherAvailabilityUpgraded;
-import com.highschool.domain.classroom.events.TestDateUpgraded;
+import com.highschool.domain.classroom.events.*;
 import com.highschool.domain.classroom.values.*;
 
 import java.util.List;
@@ -29,7 +27,7 @@ public class Class extends AggregateEvent<ClassID> {
 
     private Class(ClassID classID) {super(classID);}
 
-    public Class from(ClassID classID, List<DomainEvent> events) {
+    public static Class from(ClassID classID, List<DomainEvent> events) {
         Class classroom = new Class(classID);
         events.forEach(classroom::applyEvent);
         return classroom;
@@ -37,7 +35,7 @@ public class Class extends AggregateEvent<ClassID> {
 
     public void addStudent(StudentFullName studentName) {
         StudentID studentID = new StudentID();
-        appendChange(new CourseAdded(studentID, studentName)).apply();
+        appendChange(new StudentAdded(studentID, studentName)).apply();
     }
 
     public void updateStudentName(StudentID studentID, StudentFullName studentName) {
