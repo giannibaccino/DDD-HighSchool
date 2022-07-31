@@ -46,6 +46,10 @@ public class Class extends AggregateEvent<ClassID> {
         appendChange(new TeacherAvailabilityUpdated(teacherID, availability)).apply();
     }
 
+    public void updateTeacherAvailabilityByEvent(TeacherID teacherID,Availability availability) {
+        appendChange(new TeacherAvailabilityUpdatedByEvent(teacherID, availability)).apply();
+    }
+
     public void updateTeacherName(TeacherID teacherID, TeacherFullName teacherName) {
         appendChange(new TeacherNameUpdated(teacherID, teacherName)).apply();
     }

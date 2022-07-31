@@ -43,6 +43,10 @@ public class Campus extends AggregateEvent<CampusURL> {
         appendChange(new UserAdded(userID, username, userPassword, email)).apply();
     }
 
+    public void userAddedMessage(String message) {
+        appendChange(new UserAddedMessage(message)).apply();
+    }
+
     public void updateUsername(UserID userID, Username username) {
         appendChange(new UsernameUpdated(userID, username)).apply();
     }

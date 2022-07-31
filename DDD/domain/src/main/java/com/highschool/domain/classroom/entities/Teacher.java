@@ -12,8 +12,8 @@ public class Teacher extends Entity<TeacherID> {
     private TeacherFullName teacherName;
     private Availability availability;
 
-    public Teacher(TeacherID entityId, TeacherFullName teacherName, Availability availability) {
-        super(entityId);
+    public Teacher(TeacherID teacherID, TeacherFullName teacherName, Availability availability) {
+        super(teacherID);
         this.teacherName = teacherName;
         this.availability = availability;
     }
