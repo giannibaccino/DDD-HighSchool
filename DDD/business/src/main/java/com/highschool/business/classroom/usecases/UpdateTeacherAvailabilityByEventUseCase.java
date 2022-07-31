@@ -8,7 +8,6 @@ import com.highschool.domain.classroom.events.ClassCreated;
 import com.highschool.domain.classroom.values.Availability;
 import com.highschool.domain.classroom.values.AvailabilityEnum;
 import com.highschool.domain.classroom.values.ClassID;
-import com.highschool.domain.classroom.values.TeacherID;
 
 public class UpdateTeacherAvailabilityByEventUseCase extends UseCase<TriggeredEvent<ClassCreated>, ResponseEvents> {
 
