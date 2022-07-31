@@ -5,6 +5,7 @@ import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import com.highschool.domain.campus.commands.UpdateCourseName;
 import com.highschool.domain.campus.events.CampusCreated;
+import com.highschool.domain.campus.events.CourseAdded;
 import com.highschool.domain.campus.events.CourseNameUpdated;
 import com.highschool.domain.campus.values.*;
 import org.junit.jupiter.api.Test;
@@ -37,7 +38,8 @@ class UpdateCourseNameUseCaseTest {
         var command = new UpdateCourseName(campusURL, courseID, courseName);
 
         when(repository.getEventsBy("XXXX")).thenReturn(List.of(
-                new CampusCreated(new CampusStatus(CampusStatusEnum.ONLINE))
+                new CampusCreated(new CampusStatus(CampusStatusEnum.ONLINE)),
+                new CourseAdded(CourseID.of("YYYY"), new CourseName("BBBB"), new CoursePassword("1111"))
         ));
         useCase.addRepository(repository);
 

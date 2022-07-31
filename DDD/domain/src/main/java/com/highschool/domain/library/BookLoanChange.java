@@ -1,10 +1,8 @@
 package com.highschool.domain.library;
 
 import co.com.sofka.domain.generic.EventChange;
-import com.highschool.domain.library.commands.AddBook;
 import com.highschool.domain.library.entities.Book;
 import com.highschool.domain.library.events.*;
-import com.highschool.domain.library.values.BookCategory;
 
 import java.util.HashSet;
 
@@ -19,13 +17,9 @@ public class BookLoanChange extends EventChange {
             loan.limitDate = event.getLimitDate();
         });
 
-        apply((LoanStatusUpdated event) -> {
-            loan.loanStatus = event.getLoanStatus();
-        });
+        apply((LoanStatusUpdated event) -> loan.loanStatus = event.getLoanStatus());
 
-        apply((LoanLimitDateUpdated event) -> {
-            loan.limitDate = event.getLimitDate();
-        });
+        apply((LoanLimitDateUpdated event) -> loan.limitDate = event.getLimitDate());
 
         apply((BookAdded event) -> {
             Book book = new Book(event.getBookID(), event.getBookName(), event.getBookDescription(), event.getBookCategory());
@@ -37,12 +31,8 @@ public class BookLoanChange extends EventChange {
             book.updateCategory(event.getBookCategory());
         });
 
-        apply((ReaderNameUpdated event) -> {
-            loan.reader.updateName(event.getReaderName());
-        });
+        apply((ReaderNameUpdated event) -> loan.reader.updateName(event.getReaderName()));
 
-        apply((LibrarianNameUpdated event) -> {
-            loan.librarian.updateName(event.getLibrarianName());
-        });
+        apply((LibrarianNameUpdated event) -> loan.librarian.updateName(event.getLibrarianName()));
     }
 }

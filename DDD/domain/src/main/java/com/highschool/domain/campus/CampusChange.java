@@ -1,11 +1,9 @@
 package com.highschool.domain.campus;
 
 import co.com.sofka.domain.generic.EventChange;
-import com.highschool.domain.campus.commands.UpdateCampusStatus;
 import com.highschool.domain.campus.entities.Course;
 import com.highschool.domain.campus.entities.User;
 import com.highschool.domain.campus.events.*;
-import com.highschool.domain.library.entities.Book;
 
 import java.util.HashSet;
 
@@ -18,9 +16,7 @@ public class CampusChange extends EventChange {
             campus.campusStatus = event.getCampusStatus();
         });
 
-        apply((CampusStatusUpdated event) -> {
-            campus.campusStatus = event.getCampusStatus();
-        });
+        apply((CampusStatusUpdated event) -> campus.campusStatus = event.getCampusStatus());
 
         apply((CourseAdded event) -> {
             Course course = new Course(event.getCourseID(), event.getCourseName(), event.getCoursePassword());

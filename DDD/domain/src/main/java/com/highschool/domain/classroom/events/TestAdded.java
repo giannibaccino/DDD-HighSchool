@@ -1,6 +1,5 @@
 package com.highschool.domain.classroom.events;
 
-import co.com.sofka.domain.generic.Command;
 import co.com.sofka.domain.generic.DomainEvent;
 import com.highschool.domain.classroom.values.TestDate;
 import com.highschool.domain.classroom.values.TestID;

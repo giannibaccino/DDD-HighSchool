@@ -1,11 +1,10 @@
 package com.highschool.domain.library.commands;
 
 import co.com.sofka.domain.generic.Command;
-import com.highschool.domain.library.values.BookLoanID;
-import com.highschool.domain.library.values.LoanLimitDate;
-import com.highschool.domain.library.entities.Book;
 import com.highschool.domain.library.entities.Librarian;
 import com.highschool.domain.library.entities.Reader;
+import com.highschool.domain.library.values.BookLoanID;
+import com.highschool.domain.library.values.LoanLimitDate;
 import com.highschool.domain.library.values.LoanStatus;
 
 public class CreateLoan extends Command {

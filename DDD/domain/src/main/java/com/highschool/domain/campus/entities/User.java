@@ -12,7 +12,7 @@ public class User extends Entity<UserID> {
 
     private Username username;
     private UserPassword userPassword;
-    private Email email;
+    private final Email email;
 
     public User(UserID entityId, Username username, UserPassword userPassword, Email email) {
         super(entityId);

@@ -4,7 +4,6 @@ import co.com.sofka.domain.generic.Entity;
 import com.highschool.domain.classroom.values.TestDate;
 import com.highschool.domain.classroom.values.TestID;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 public class Test extends Entity<TestID> {

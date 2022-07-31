@@ -6,6 +6,7 @@ import com.highschool.domain.campus.values.CourseID;
 import com.highschool.domain.campus.values.CourseName;
 import com.highschool.domain.campus.values.CoursePassword;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -13,12 +14,13 @@ public class Course extends Entity<CourseID> {
 
     private CourseName courseName;
     private CoursePassword coursePassword;
-    private Set<CourseContent> contentSet;
+    private final Set<CourseContent> contentSet;
 
     public Course(CourseID courseID, CourseName courseName, CoursePassword coursePassword) {
         super(courseID);
         this.courseName = courseName;
         this.coursePassword = coursePassword;
+        this.contentSet = new HashSet<>();
     }
 
     public void updateName(CourseName courseName) {

@@ -2,7 +2,6 @@ package com.highschool.domain.library.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 public class LoanStatus implements ValueObject<LoanStatusEnum> {

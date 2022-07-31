@@ -2,7 +2,6 @@ package com.highschool.domain.campus.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import com.highschool.domain.campus.values.CourseID;
-import com.highschool.domain.campus.values.CourseName;
 import com.highschool.domain.campus.values.CoursePassword;
 
 public class CoursePasswordUpdated extends DomainEvent {

@@ -7,8 +7,8 @@ import java.util.Objects;
 
 public class Book extends Entity<BookID> {
 
-    private BookName bookName;
-    private BookDescription bookDescription;
+    private final BookName bookName;
+    private final BookDescription bookDescription;
     private BookCategory bookCategory;
 
     public Book(BookID entityId, BookName bookName, BookDescription bookDescription, BookCategory bookCategory) {

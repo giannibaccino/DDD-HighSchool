@@ -29,13 +29,9 @@ public class ClassChange extends EventChange {
             student.updateName(event.getStudentName());
         });
 
-        apply((TeacherAvailabilityUpdated event) -> {
-            classroom.teacher.updateAvailability(event.getAvailability());
-        });
+        apply((TeacherAvailabilityUpdated event) -> classroom.teacher.updateAvailability(event.getAvailability()));
 
-        apply((TeacherNameUpdated event) -> {
-            classroom.teacher.updateName(event.getTeacherName());
-        });
+        apply((TeacherNameUpdated event) -> classroom.teacher.updateName(event.getTeacherName()));
 
         apply((TestAdded event) -> {
             Test test = new Test(event.getTestID(), event.getTestDate());

@@ -3,7 +3,6 @@ package com.highschool.domain.library.events;
 import co.com.sofka.domain.generic.DomainEvent;
 import com.highschool.domain.library.values.BookLoanID;
 import com.highschool.domain.library.values.LoanLimitDate;
-import com.highschool.domain.library.values.LoanStatus;
 
 public class LoanLimitDateUpdated extends DomainEvent {
     private final BookLoanID loanID;

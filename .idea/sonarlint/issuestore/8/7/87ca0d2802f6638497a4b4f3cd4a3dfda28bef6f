@@ -1,9 +1,0 @@
-
-D
-java:S1948
-".Make "userPassword" transient or serializable.(§ÍË
-@
-java:S1068	"*Remove this unused "userID" private field.(™ÂúÔ
-F
-java:S1068
-"0Remove this unused "userPassword" private field.(§ÍË

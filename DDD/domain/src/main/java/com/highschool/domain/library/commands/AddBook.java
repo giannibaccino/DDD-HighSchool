@@ -1,8 +1,10 @@
 package com.highschool.domain.library.commands;
 
 import co.com.sofka.domain.generic.Command;
-import com.highschool.domain.library.BookLoan;
-import com.highschool.domain.library.values.*;
+import com.highschool.domain.library.values.BookCategory;
+import com.highschool.domain.library.values.BookDescription;
+import com.highschool.domain.library.values.BookLoanID;
+import com.highschool.domain.library.values.BookName;
 
 public class AddBook extends Command {
 

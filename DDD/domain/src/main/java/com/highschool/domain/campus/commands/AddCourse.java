@@ -2,7 +2,6 @@ package com.highschool.domain.campus.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.highschool.domain.campus.values.CampusURL;
-import com.highschool.domain.campus.values.CourseID;
 import com.highschool.domain.campus.values.CourseName;
 import com.highschool.domain.campus.values.CoursePassword;
 
