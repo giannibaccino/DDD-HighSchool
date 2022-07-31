@@ -1,12 +1,6 @@
 
 E
 DDD/domain/domain.iml,2\e\2eca16ff9c1bf46db03f11800673a5fe0b2bceb4
-;
-DDD/pom.xml,a\4\a465158a90c515d2dcdb8cf294286b59b21dabfa
-B
-DDD/domain/pom.xml,3\5\3502a92a9adf108925a1ba96fe41585e97da24f5
-D
-DDD/business/pom.xml,6\0\60af74951feda5eaaede1468d986c49eeb764100
 è
 _DDD/business/src/main/java/com/highschool/business/campus/usecases/AddCourseContentUseCase.java,9\6\9696a62e3dbba31481d80487aeb3139a070b0290
 à
@@ -95,8 +89,6 @@ TDDD/domain/src/main/java/com/highschool/domain/campus/commands/AddCourseContent
 KDDD/domain/src/main/java/com/highschool/domain/campus/commands/AddUser.java,e\b\eb882dd133970654a7c1f3d3150051d4e4cfe9dc
 Ä
 PDDD/domain/src/main/java/com/highschool/domain/campus/commands/CreateCampus.java,6\5\6520b2d28d77ebcacae8738f6d5ed92230e64777
-Ü
-VDDD/domain/src/main/java/com/highschool/domain/campus/commands/UpdateCampusStatus.java,5\4\54fff4346293fb2f559ea2538a6a8776f5a2253c
 à
 XDDD/domain/src/main/java/com/highschool/domain/campus/commands/UpdateCoursePassword.java,4\e\4e6f10167d6e130b2694d658b9f65f792150b346
 Ñ
@@ -113,8 +105,6 @@ NDDD/domain/src/main/java/com/highschool/domain/classroom/commands/AddTest.java
 RDDD/domain/src/main/java/com/highschool/domain/classroom/commands/CreateClass.java,7\a\7aa9e99ea5e5bc61564283c2ee634d85eaac1440
 à
 XDDD/domain/src/main/java/com/highschool/domain/classroom/commands/UpdateStudentName.java,c\d\cd6c1b1fb53e1e33b66c9c8435cef174456a51a0
-ê
-`DDD/domain/src/main/java/com/highschool/domain/classroom/commands/UpdateTeacherAvailability.java,a\1\a17d8aef92eeb9169760c96117ef4641411dcbdd
 à
 XDDD/domain/src/main/java/com/highschool/domain/classroom/commands/UpdateTeacherName.java,e\0\e04a3564873f6f22709eec6e8e0035ab21f674dd
 Ö
@@ -253,19 +243,13 @@ t
 DDDD/domain/src/main/java/com/highschool/domain/library/BookLoan.java,8\f\8f5cf12dccdb96863225987fa26d211f012c0e7b
 Å
 QDDD/domain/src/main/java/com/highschool/domain/classroom/events/ClassCreated.java,f\0\f061a30fec2615f54a16bdde0785ff9d439f8505
-è
-_DDD/domain/src/main/java/com/highschool/domain/classroom/events/TeacherAvailabilityUpdated.java,1\1\1114eec6846990dbfbfad0691c27a14fdc6d8b4d
 ~
 NDDD/domain/src/main/java/com/highschool/domain/classroom/values/StudentID.java,6\e\6eefa8c0e2ff3874148437109e5a61b998ed81f9
 ~
 NDDD/domain/src/main/java/com/highschool/domain/classroom/entities/Student.java,f\0\f0d3f8a98359c191f64a4a68668770fee53a4986
-~
-NDDD/domain/src/main/java/com/highschool/domain/classroom/entities/Teacher.java,7\2\727ae2a1f25df34738065e54ef31bdb79049612b
 õ
 kDDD/business/src/main/java/com/highschool/business/classroom/usecases/UpdateTeacherAvailabilityUseCase.java,e\5\e5e482f5aeae4f8b3e07c94f2e44cf26443601aa
 ü
 oDDD/business/src/test/java/com/highschool/business/classroom/usecases/UpdateTeacherAvailabilityUseCaseTest.java,e\4\e48df1b5d8b173876aab39d21184feffb27826c8
-s
-CDDD/domain/src/main/java/com/highschool/domain/classroom/Class.java,4\1\41bf213129d754e94552b52aff99d29fa889070b
 ¶
 vDDD/business/src/test/java/com/highschool/business/classroom/usecases/UpdateTeacherAvailabilityByEventUseCaseTest.java,2\e\2ec16859bdd24fa90b9e41599442305f80232363
