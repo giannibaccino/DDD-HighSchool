@@ -14,7 +14,7 @@ public class UserAddedMessageUseCase extends UseCase<TriggeredEvent<UserAdded>, 
         var event = userAddedTriggeredEvent.getDomainEvent();
         var campus = Campus.from(CampusURL.of(event.aggregateRootId()), this.retrieveEvents());
 
-        campus.userAddedMessage("User was succesully added");
+        campus.userAddedMessage("User was succesfully added");
         emit().onResponse(new ResponseEvents(campus.getUncommittedChanges()));
     }
 }

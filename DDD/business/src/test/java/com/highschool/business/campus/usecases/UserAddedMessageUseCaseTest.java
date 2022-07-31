@@ -48,7 +48,7 @@ class UserAddedMessageUseCaseTest {
                 .getDomainEvents();
 
         var msg = (UserAddedMessage) events.get(0);
-        assertEquals("User was succesully added", msg.getMessage());
+        assertEquals("User was succesfully added", msg.getMessage());
         Mockito.verify(repository).getEventsBy("XXXX");
     }
 
